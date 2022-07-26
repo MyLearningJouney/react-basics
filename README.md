@@ -1,3 +1,4 @@
+    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
 <div id="about">
   <h2>About this project </h2>
   <p>These projects has being developed in order to practice and fix my learning in react framework. Feel free to help me with suggestions or comments, i will aprreciate it.</p>
