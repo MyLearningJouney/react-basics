@@ -1,5 +1,5 @@
 <div id="logo" align="center">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="80" height="80"/>
 </div>
 <div id="about">
   <h2>About this project </h2>
