@@ -1,7 +1,7 @@
 <div id="about">
   <h2>About this project </h2>
-  <p>Despite having a degree in software engineering, currently im a programming rookie in the path to become a Javascript Full Stack Developer.</p>
-  <p>Right after my graduation I was dedicating myself to a non-technology-related business that didn't work out.</p>
-  <p>And since i’ve started to studying programming again, I slowly fell in love with it, specially to Front-End</p>
-  <p>I’m a really honest person, with creative skills to solving problem and a little bit perfeccionist.</p>
+  <p>These projects has being developed in order to practice and fix my learning in react framework. Feel free to help me with suggestions or comments, i will aprreciate it.</p>
+  <p>Why im not using my personal GitHub ?</p>
+  <p>Since i wish to be able to have access in different locations to my projects, the GitHub offers a convenient tool called Codespaces, with it i can create an virtual machine with Visual Studio and can access all my projects whenever and where i want to.</p>
+  <p>But since this tool is avaiable only to Organizations, i've create one Organization of my own called MyLearningJourney to be able to keep up learning everwhere. </p>
 </div>
