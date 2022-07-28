@@ -3,7 +3,7 @@ import React from 'react';
 
 function TrashIcon (){
     return (
-        <i className="fa-solid fa-trash" />
+        <i className="fa-solid fa-trash"/>
     )
 }
 

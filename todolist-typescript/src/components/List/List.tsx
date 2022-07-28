@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '../List/List.module.scss'
+import TrashIcon from '../Icons/TrashIcon'
 
 
 function List (){
@@ -13,7 +14,7 @@ function List (){
                 <div className={style.listIconsWrapper}>
                     <i className={`${style.checkIcon} fa-solid fa-check`}></i>
                     <i className={`${style.pencilIcon} fa-solid fa-pencil`}></i>
-                    <i className={`${style.trashIcon} fa-solid fa-trash`}></i>
+                    {/*<TrashIcon className={style.trashIcon}/>*/}
                 </div>
             </li>
         </ul>

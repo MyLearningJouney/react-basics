@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import List from './components/List/List'
+import InputForm from './components/Form/InputForm'
 
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
       <section>
         <div className="todoListWrapper">
           <List />
+        </div>
+        <div className="inputFormWrapper">
+          <InputForm />
         </div>
       </section>
     </div>

@@ -15,8 +15,8 @@ body{
   justify-content: center;
 }
 
-form{
+.inputFormWrapper{
   display: flex;
-  align-items: center;
   justify-content: center;
 }
+
