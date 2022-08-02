@@ -1,11 +1,14 @@
 import React from 'react';
 import style from '../Button/InputButton.module.scss'
 
+interface Props {
+    type?: "button" | "submit" | "reset" | undefined, 
+    onClick?: () => void
+} 
 
-
-function InputButton (){
+function InputButton ({ onClick, type }: Props){
     return (
-        <button className={style.addBtn} type="submit">
+        <button onClick={onClick} className={style.addBtn} type={type}>
             <i className="fa-solid fa-check"></i>
         </button>
     )

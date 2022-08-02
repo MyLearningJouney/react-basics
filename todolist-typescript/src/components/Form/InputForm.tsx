@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from '../Form/InputForm.module.scss'
 import InputButton from '../Form/Button/InputButton'
+import { ActivityItem } from '../../interfaces/ActivityItem';
 
 
-function InputForm (){
+interface Props { 
+    setActivity: React.Dispatch<React.SetStateAction<ActivityItem[]>> 
+}
+
+function InputForm ({setActivity}: Props){
+
+    function insertActivity(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault()
+        setActivity = 
+
+    }
+    const [activity, setActivities] = useState([{}]) 
     return (
-        <form className={style.inputForm}>
+        <form className={style.inputForm} onSubmit={insertActivity}>
             <div className={style.formContentWrapper}>
                 <input
                     type="text"
@@ -14,7 +26,7 @@ function InputForm (){
                     id="activityInput"
                     placeholder="What you have to do today ?"
                 />
-                <InputButton />
+                <InputButton type="submit"/>
             </div>
         </form>
     )
