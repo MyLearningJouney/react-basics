@@ -12,23 +12,16 @@ function App() {
     completedDate: null,
     completed: false,
     id: uuidv4()
-}]);
+  }]);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1 
-          onClick={ () => {
-            setActivity([...activity,{activity:'Oiii', createdDate: new Date(Date.now()),completedDate:null,completed:false,id:uuidv4()}])
-            console.log(activity)
-            } 
-          }>
-            TodoList with Typescript
-          </h1>
+        <h1>TodoList with Typescript</h1>
       </header>
       <section>
         <div className="todoListWrapper">
-          <List />
+          <List activity={activity}/>
         </div>
         <div className="inputFormWrapper">
           <InputForm />

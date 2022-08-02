@@ -10,12 +10,12 @@ interface Props {
 
 function InputForm ({setActivity}: Props){
 
-    function insertActivity(event: React.FormEvent<HTMLFormElement>){
-        event.preventDefault()
-        setActivity = 
-
-    }
     const [activity, setActivities] = useState([{}]) 
+
+    function insertActivity(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+    }
+    
     return (
         <form className={style.inputForm} onSubmit={insertActivity}>
             <div className={style.formContentWrapper}>
@@ -26,7 +26,7 @@ function InputForm ({setActivity}: Props){
                     id="activityInput"
                     placeholder="What you have to do today ?"
                 />
-                <InputButton type="submit"/>
+                <InputButton type="submit" onClick={() => console.log('value')}/>
             </div>
         </form>
     )
