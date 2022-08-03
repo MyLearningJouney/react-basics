@@ -1,21 +1,22 @@
 import React from 'react';
 import style from '../ListItem/ListItem.module.scss'
-import TrashIcon from '../../Icons/TrashIcon'
-import PencilIcon from '../../Icons/PencilIcon'
-import CheckIcon from '../../Icons/CheckIcon'
+import TrashIcon from '../../Icons/TrashIcon/TrashIcon'
+import PencilIcon from '../../Icons/PencilIcon/PencilIcon'
+import CheckIcon from '../../Icons/CheckIcon/CheckIcon'
+import { ActivityItem } from '../../../types/ActivityItem';
 
 
-function ListItem (){
+function ListItem ({ activity, createdDate, completedDate, completed, id}: ActivityItem){
     return (
-        <li className={style.listItem}>
+        <li className={style.listItem} key={id}>
             <div className={style.listTextWrapper}>
-                <span className={style.listActivity}>Hoje eu quero estudar</span>
-                <span className={style.listDate}>23/07/2022</span>
+                <span className={style.listActivity}>{activity}</span>
+                <span className={style.listDate}>{createdDate.toString()}</span>
             </div>
             <div className={style.listIconsWrapper}>
-                <CheckIcon/>
-                <PencilIcon/>
-                <TrashIcon/>
+                <CheckIcon type={"todolist"}/>
+                <PencilIcon type={"todolist"}/>
+                <TrashIcon type={"todolist"}/>
             </div>
         </li>
     )
