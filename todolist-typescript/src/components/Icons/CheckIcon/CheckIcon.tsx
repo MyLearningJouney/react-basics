@@ -3,13 +3,14 @@ import style from '../CheckIcon/CheckIcon.module.scss'
 
 interface Props {
 
-    type?:"todolist" | undefined
+    type?:"todolist" | undefined,
+    onClick?: () => void 
 }
 
 
-function CheckIcon ( {type} : Props ){
+function CheckIcon ( {type, onClick} : Props ){
     return (
-        <i className={type === "todolist" ? `fa-solid fa-check ${style.listItemCheckIcon}`  : "fa-solid fa-check"}/>
+        <i className={type === "todolist" ? `fa-solid fa-check ${style.listItemCheckIcon}`  : "fa-solid fa-check"} onClick={onClick}/>
     )
 }
 
