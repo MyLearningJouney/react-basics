@@ -1,7 +1,7 @@
 export interface ActivityItem {
     activity: string,
-    createdDate: Date, 
-    completedDate: Date,
+    createdDate: string, 
+    completedDate: string,
     completed: boolean, 
     id: string
 }
