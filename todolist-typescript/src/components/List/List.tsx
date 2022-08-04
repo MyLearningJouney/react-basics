@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { SetStateAction } from 'react';
 import { ActivityItem } from '../../types/ActivityItem';
 import style from '../List/List.module.scss'
 import ListItem from './ListItem/ListItem';

@@ -4,15 +4,26 @@ import style from '../PencilIcon/PencilIcon.module.scss'
 
 interface Props {
 
-    type?:"todolist" | undefined
+    type?:"todolist" | "hide" | undefined
 }
-
 
 function PencilIcon ( {type} : Props ){
-    return (
-        <i className={type === "todolist" ? `fa-solid fa-pencil ${style.listItemPencilIcon}`  : "fa-solid fa-pencil"}/>
-
-    )
+    if(type === "todolist"){
+        return (
+            <i className={`fa-solid fa-pencil ${style.listItemPencilIcon}`}/>
+        )
+    }
+    if(type === "hide"){
+        return (
+            <i className={`fa-solid fa-pencil ${style.hide}`}/>
+        )
+    }
+    else{
+        return (
+            <i className={"fa-solid fa-pencil"}/>
+        )
+    }
 }
+
 
 export default PencilIcon

@@ -3,13 +3,28 @@ import style from '../TrashIcon/TrashIcon.module.scss'
 
 interface Props {
 
-    type?:"todolist" | undefined
+    type?:"todolist" | "hide" | undefined
 }
 
 function TrashIcon ( {type} : Props ){
-    return (
-        <i className={type === "todolist" ? `fa-solid fa-trash ${style.listItemTrashIcon}`  : "fa-solid fa-trash"}/>
-    )
+
+    if(type === "todolist"){
+        return (
+            <i className={`fa-solid fa-trash ${style.listItemTrashIcon}`}/>
+        )
+    }
+    if(type === "hide"){
+        return (
+            <i className={`fa-solid fa-trash ${style.hide}`}/>
+        )
+    }
+    else{
+        return (
+            <i className={"fa-solid fa-trash"}/>
+        )
+    }
 }
 
 export default TrashIcon
+
+
