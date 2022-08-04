@@ -6,7 +6,7 @@ import ListItem from './ListItem/ListItem';
 interface Props{
     activities: ActivityItem[]
     setActivities: React.Dispatch<SetStateAction<ActivityItem[]>>
-}
+}    
 
 function List ({ activities, setActivities }: Props){
 

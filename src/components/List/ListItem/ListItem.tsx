@@ -1,5 +1,5 @@
 import React, { SetStateAction } from 'react';
-import style from '../ListItem/ListItem.module.scss'
+import style from 'src/components/List/ListItem/ListItem.module.scss' 
 import TrashIcon from '../../Icons/TrashIcon/TrashIcon'
 import PencilIcon from '../../Icons/PencilIcon/PencilIcon'
 import CheckIcon from '../../Icons/CheckIcon/CheckIcon'
