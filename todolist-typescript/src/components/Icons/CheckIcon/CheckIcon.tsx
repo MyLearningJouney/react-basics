@@ -4,7 +4,7 @@ import style from '../CheckIcon/CheckIcon.module.scss'
 interface Props {
 
     type?:"todolist" | undefined,
-    onClick?: () => void 
+    onClick?: ((event: React.MouseEvent<HTMLButtonElement>) => void)
 }
 
 

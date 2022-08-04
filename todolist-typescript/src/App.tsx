@@ -15,7 +15,9 @@ function App() {
       </header>
       <section>
         <div className="todoListWrapper">
-          <List activities={activities}/>
+          <List 
+            activities={activities}
+            setActivities={setActivities}/>
         </div>
         <div className="inputFormWrapper">
           <Form setActivities={setActivities}/>
