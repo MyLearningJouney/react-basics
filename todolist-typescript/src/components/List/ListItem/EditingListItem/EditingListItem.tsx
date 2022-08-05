@@ -2,7 +2,6 @@ import React, { SetStateAction, useState } from 'react';
 import { ActivityItem } from '../../../../types/ActivityItem';
 import CancelIcon from '../../../Icons/CancelIcon/CancelIcon';
 import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
-import PencilIcon from '../../../Icons/PencilIcon/PencilIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
 import style from '../EditingListItem/EditingListItem.module.scss'
 import handleCancelEdit from './IconHandler/handleCancelEdit';
