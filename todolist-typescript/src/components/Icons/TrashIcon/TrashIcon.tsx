@@ -4,6 +4,8 @@ import style from '../TrashIcon/TrashIcon.module.scss'
 interface Props {
 
     type?:"todolist" | "hide" | undefined
+    onClick?: ((event: React.MouseEvent<HTMLButtonElement>) => void)
+
 }
 
 function TrashIcon ( {type} : Props ){

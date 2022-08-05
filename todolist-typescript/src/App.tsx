@@ -6,7 +6,7 @@ import { ActivityItem } from './types/ActivityItem';
 
 
 function App() {
-  const [activities, setActivities] = useState<ActivityItem[]>([]);
+  const [activitiesList, setActivitiesList] = useState<ActivityItem[]>([]);
 
   return (
     <div className="App">
@@ -16,11 +16,11 @@ function App() {
       <section>
         <div className="todoListWrapper">
           <List 
-            activities={activities}
-            setActivities={setActivities}/>
+            activitiesList={activitiesList}
+            setActivitiesList={setActivitiesList}/>
         </div>
         <div className="inputFormWrapper">
-          <Form setActivities={setActivities}/>
+          <Form setActivities={setActivitiesList}/>
         </div>
       </section>
     </div>

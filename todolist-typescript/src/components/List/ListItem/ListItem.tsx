@@ -5,44 +5,31 @@ import PencilIcon from '../../Icons/PencilIcon/PencilIcon'
 import CheckIcon from '../../Icons/CheckIcon/CheckIcon'
 import { ActivityItem } from '../../../types/ActivityItem';
 import CancelIcon from '../../Icons/CancelIcon/CancelIcon';
+import PendingListItem from './PendingListItem/PendingListItem';
 
 interface Props {
-    activity: string,
-    createdDate: string,
-    completedDate: string, 
-    completed: boolean, 
-    id: string,
-    setActivities: React.Dispatch<SetStateAction<ActivityItem[]>>
+    activityItem: ActivityItem,
+    setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
 }
 
-function ListItem ({ activity, createdDate, completedDate, completed, id, setActivities}: Props){
+function ListItem ({ activityItem, setActivitiesList}: Props){
 
     function handleComplete(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault()
-        setActivities(prevActitivies => 
+        setActivitiesList(prevActitivies => 
             prevActitivies.map(activity => 
             {
-                if (activity.id === id){
-                    return {...activity, completed:true}
+                if (activityItem.id === activity.id){
+                    return {...activity, status: "completed"}
                 }
                 return activity
             }))
     }
-    if (completed === false){
+
+    if (activityItem.status === "pending"){
         return (
             <li className={style.listItem}>
-                <div className={style.listTextWrapper}>
-                    <span className={style.listActivity}>{activity}</span>
-                    <span className={style.listDate}>{createdDate.toString()}</span>
-                </div>
-                <div className={style.listIconsWrapper}>
-                    <CheckIcon 
-                        type={"todolist"} 
-                        onClick={handleComplete}
-                    />
-                    <PencilIcon type={"todolist"}/>
-                    <TrashIcon type={"todolist"}/>
-                </div>
+                <PendingListItem activityItem={activityItem} setActivitiesList={setActivitiesList}></PendingListItem>
             </li>
         )
     }
@@ -50,8 +37,8 @@ function ListItem ({ activity, createdDate, completedDate, completed, id, setAct
         return (
             <li className={style.listItem}>
                 <div className={style.listTextWrapper}>
-                    <span className={style.listActivity}>{activity}</span>
-                    <span className={style.listDate}>{createdDate.toString()}</span>
+                    <span className={style.listActivity}>{activityItem.activity}</span>
+                    <span className={style.listDate}>{activityItem.createdDate.toString()}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CancelIcon type={"todolist"}/>

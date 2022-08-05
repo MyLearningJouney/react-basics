@@ -2,7 +2,6 @@ export interface ActivityItem {
     activity: string,
     createdDate: string, 
     completedDate: string,
-    completed: boolean, 
+    status: "pending" | "editing" | "completed",
     id: string
 }
-

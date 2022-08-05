@@ -4,24 +4,20 @@ import style from '../List/List.module.scss'
 import ListItem from './ListItem/ListItem';
 
 interface Props{
-    activities: ActivityItem[]
-    setActivities: React.Dispatch<SetStateAction<ActivityItem[]>>
+    activitiesList: ActivityItem[]
+    setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
 }
 
-function List ({ activities, setActivities }: Props){
+function List ({ activitiesList, setActivitiesList }: Props){
 
     return (
         <ul className={style.todoList}>
         {  
-            activities.map(activity => (            
+            activitiesList.map(activityItem => (            
             <ListItem 
-                key={activity.id}
-                id = {activity.id}
-                activity={activity.activity} 
-                createdDate={activity.createdDate} 
-                completedDate={activity.completedDate} 
-                completed={activity.completed} 
-                setActivities = {setActivities}
+                key={activityItem.id}
+                activityItem={activityItem}
+                setActivitiesList = {setActivitiesList}
             />
             ))
         }

@@ -16,15 +16,14 @@ function Form ({setActivities}:Props ){
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault()
-        const newActivity = {
+        const newActivity:ActivityItem = {
             activity:activity,
             createdDate: DateFormat(new Date(Date.now())), 
             completedDate: DateFormat(new Date()),
-            completed: false, 
+            status: "pending", 
             id: uuidv4()
             }
         setActivities(prevActitivies => [...prevActitivies, newActivity])
-
         }
 
     return (
