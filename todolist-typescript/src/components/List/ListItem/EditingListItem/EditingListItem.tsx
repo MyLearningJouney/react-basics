@@ -6,6 +6,7 @@ import PencilIcon from '../../../Icons/PencilIcon/PencilIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
 import style from '../EditingListItem/EditingListItem.module.scss'
 import handleCancelEdit from './IconHandler/handleCancelEdit';
+import handleConfirmEdit from './IconHandler/handleConfirmEdit';
 
 interface Props {
     activityItem: ActivityItem,
@@ -21,21 +22,6 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
         const currentEditActivity = event.target.value;
         setEditActivity?.(currentEditActivity)
     }
-
-    function confirmEdit(event: React.MouseEvent<HTMLButtonElement>) {
-        event.preventDefault()
-        console.log(editActivity)
-        setActivitiesList(prevActitivies => 
-            prevActitivies.map(activity => 
-            {
-                if (activityItem.id === activity.id){
-                    return {...activity, status: "pending", activity:editActivity}
-                }
-                return activity
-            }))
-    }
-
-
 
 
     return(
@@ -54,7 +40,7 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 
                         type={"todolist"} 
-                        onClick={confirmEdit}
+                        onClick={event => handleConfirmEdit({event,setActivitiesList,activityItem,editActivity})}
                     />
                     <CancelIcon 
                         type={"todolist"} 
