@@ -12,6 +12,11 @@
       opacity: 1;
     }
   }
+
+  .listItem.completedActivity{
+    background-color: #d6ecd2;
+    filter:none;
+  }
   
   .listTextWrapper{
     width:85%;

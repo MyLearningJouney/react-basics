@@ -1,11 +1,11 @@
 import React, { SetStateAction } from 'react';
 import style from '../ListItem/ListItem.module.scss'
-import TrashIcon from '../../Icons/TrashIcon/TrashIcon'
-import PencilIcon from '../../Icons/PencilIcon/PencilIcon'
-import CheckIcon from '../../Icons/CheckIcon/CheckIcon'
 import { ActivityItem } from '../../../types/ActivityItem';
 import CancelIcon from '../../Icons/CancelIcon/CancelIcon';
 import PendingListItem from './PendingListItem/PendingListItem';
+import TrashIcon from '../../Icons/TrashIcon/TrashIcon';
+import PencilIcon from '../../Icons/PencilIcon/PencilIcon';
+import CompletedListItem from './CompletedListItem/CompletedListItem';
 
 interface Props {
     activityItem: ActivityItem,
@@ -14,26 +14,14 @@ interface Props {
 
 function ListItem ({ activityItem, setActivitiesList}: Props){
 
-    function handleComplete(event: React.MouseEvent<HTMLButtonElement>) {
-        event.preventDefault()
-        setActivitiesList(prevActitivies => 
-            prevActitivies.map(activity => 
-            {
-                if (activityItem.id === activity.id){
-                    return {...activity, status: "completed"}
-                }
-                return activity
-            }))
-    }
-
-    if (activityItem.status === "pending"){
+    if (activityItem.status === "completed"){
         return (
-            <li className={style.listItem}>
-                <PendingListItem activityItem={activityItem} setActivitiesList={setActivitiesList}></PendingListItem>
+            <li className={`${style.listItem} ${style.completedActivity}`}>
+                <CompletedListItem activityItem={activityItem} setActivitiesList={setActivitiesList}></CompletedListItem>
             </li>
         )
     }
-    else{
+    else if (activityItem.status === "editing"){
         return (
             <li className={style.listItem}>
                 <div className={style.listTextWrapper}>
@@ -45,6 +33,13 @@ function ListItem ({ activityItem, setActivitiesList}: Props){
                     <PencilIcon type={"hide"}/>
                     <TrashIcon  type={"hide"}/>
                 </div>
+            </li>
+        )
+    }
+    else {
+        return (
+            <li className={style.listItem}>
+                <PendingListItem activityItem={activityItem} setActivitiesList={setActivitiesList}></PendingListItem>
             </li>
         )
     }

@@ -7,16 +7,10 @@ interface Props {
     event: React.MouseEvent<HTMLButtonElement>
 }
 
-function handleComplete({activityItem,setActivitiesList,event}: Props) {
+function handleDelete({activityItem,setActivitiesList,event}: Props) {
     event.preventDefault()
     setActivitiesList(prevActitivies => 
-        prevActitivies.map(activity => 
-        {
-            if (activityItem.id === activity.id){
-                return {...activity, status: "completed"}
-            }
-            return activity
-        }))
+        prevActitivies.filter(activity => activity.id !== activityItem.id))    
 }
 
-export default handleComplete
+export default handleDelete

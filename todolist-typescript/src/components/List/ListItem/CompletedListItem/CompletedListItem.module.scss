@@ -1,4 +1,5 @@
-  .listTextWrapper{
+
+.listTextWrapper{
     width:85%;
   }
   
@@ -8,9 +9,16 @@
     margin-bottom: 5px;
   }
   
-  .listDate{
+  .listCompletedDate{
     display:flex;
     font-size:12px;
+  }
+
+  .listCompletedDate::before{
+    display:flex;
+    font-size:12px;
+    margin-right: 3px;
+    content: 'Completed at';
   }
   
   .listIconsWrapper{
