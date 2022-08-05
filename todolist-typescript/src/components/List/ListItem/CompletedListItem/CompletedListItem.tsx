@@ -5,6 +5,7 @@ import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
 import PencilIcon from '../../../Icons/PencilIcon/PencilIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
 import style from '../CompletedListItem/CompletedListItem.module.scss'
+import handleCancelComplete from './IconHandler/handleCancelCompleteIcon';
 
 interface Props {
     activityItem: ActivityItem,
@@ -22,6 +23,7 @@ function CompletedListItem ({ activityItem, setActivitiesList}: Props){
                 <div className={style.listIconsWrapper}>
                     <CancelIcon 
                         type={"todolist"} 
+                        onClick={event => handleCancelComplete({event,setActivitiesList,activityItem})}
                     />
                     <PencilIcon 
                         type={"hide"} 

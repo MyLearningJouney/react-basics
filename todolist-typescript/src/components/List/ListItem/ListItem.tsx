@@ -38,7 +38,7 @@ function ListItem ({ activityItem, setActivitiesList}: Props){
     }
     else {
         return (
-            <li className={style.listItem}>
+            <li className={`${style.listItem} ${style.show}`}>
                 <PendingListItem activityItem={activityItem} setActivitiesList={setActivitiesList}></PendingListItem>
             </li>
         )
