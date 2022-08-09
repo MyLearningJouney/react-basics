@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import List from './components/List/List'
-import InputForm from './components/Form/InputForm'
-import { v4 as uuidv4 } from 'uuid'; 
+import Form from './components/Form/Form'
+import { ActivityItem } from './types/ActivityItem';
 
 
 function App() {
-  const [activity, setActivity] = useState([{
-    activity: 'Aprender Javascript',
-    createdDate: new Date(Date.now()),
-    completedDate: null,
-    completed: false,
-    id: uuidv4()
-  }]);
+  const [activitiesList, setActivitiesList] = useState<ActivityItem[]>([]);
 
   return (
     <div className="App">
@@ -21,10 +15,12 @@ function App() {
       </header>
       <section>
         <div className="todoListWrapper">
-          <List activity={activity}/>
+          <List 
+            activitiesList={activitiesList}
+            setActivitiesList={setActivitiesList}/>
         </div>
         <div className="inputFormWrapper">
-          <InputForm />
+          <Form setActivities={setActivitiesList}/>
         </div>
       </section>
     </div>
